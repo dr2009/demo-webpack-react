@@ -1,10 +1,10 @@
-const { resolve } = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-redux', 'react-router', 'react-router-redux', 'redux'],
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux'],
         main: [
             'react-hot-loader/patch',
             // activate HMR for React
@@ -18,7 +18,7 @@ module.exports = {
             // only- means to only hot reload for successful updates
 
 
-            './index.js'
+            './src/index.js'
             // the entry point of our app
         ]
     },
@@ -28,13 +28,22 @@ module.exports = {
 
         path: resolve(__dirname, 'dist'),
 
-        publicPath: './src'
+        // publicPath: './src'
         // necessary for HMR to know where to load the hot update chunks
     },
+    // resolve: {
+    //     alias: {
+    //         "react": "react/dist/react.min.js",
+    //         "react-dom": "react-dom/dist/react-dom.min.js",
+    //         "react-redux":"react-redux/dist/react-redux.min.js",
+    //         "react-router":"react-router/umd/react-router.js",
+    //         "react-router-redux":"react-router-redux/dist/ReactRouterRedux.min.js",
+    //         "redux":"redux/dist/redux.min.js",
+    //     }
+    // },
+    // context: resolve(__dirname, 'src'),
 
-    context: resolve(__dirname, 'src'),
-
-    devtool: 'inline-source-map',
+    devtool: 'cheap-eval-source-map',
 
     devServer: {
         hot: true,
@@ -82,12 +91,12 @@ module.exports = {
         // prints more readable module names in the browser console on HMR updates
 
         new webpack.optimize.CommonsChunkPlugin({
-            name: ["vendor"], // vendor libs + extracted manifest
+            name: ["vendor", "manifest"], // vendor libs + extracted manifest
             minChunks: Infinity,
         }),
 
         new HtmlWebpackPlugin({
-            template: './dist/index.html'
+            template: './index.html'
         }),
     ],
 };

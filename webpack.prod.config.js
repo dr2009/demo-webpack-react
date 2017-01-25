@@ -12,37 +12,35 @@ const InlineManifestWebpackPlugin = require("inline-manifest-webpack-plugin");
 module.exports = {
     entry: {
         vendor: ['react', 'react-redux', 'react-router', 'react-router-redux', 'redux'],
-        main: "./src/index.js"
+        main: './src/index.js'
     },
     output: {
         path: path.join(__dirname, "dist"),
         filename: '[name].[chunkhash].js',
-        chunkFilename: "[name].[chunkhash].js"
+        chunkFilename: "[id].[chunkhash].js"
         // process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'
     },
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: "babel-loader",
+                use: "babel-loader",
                 include: [
-                    path.resolve(__dirname, "app")
+                    path.resolve(__dirname, "src")
                 ],
                 exclude: [
-                    path.resolve(__dirname, "app/demo-files")
+                    path.resolve(__dirname, "src/demo-files")
                 ],
             },
             {
-                test: /\.less$/,
+                test: /\.css/,
                 use: [
                     "style-loader",
-                    "css-loader",
-                    "less-loader"
+                    "css-loader?modules"
                 ]
             }
         ]
     },
-    target: "web",
     devtool: "cheap-module-source-map",
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
@@ -58,9 +56,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './static/index.html'
         }),
-        new InlineManifestWebpackPlugin({
-            name: 'webpackManifest'
+        // 作用不知道
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
         }),
+        // 压缩
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compress: {
