@@ -7,7 +7,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
-const InlineManifestWebpackPlugin = require("inline-manifest-webpack-plugin");
 
 module.exports = {
     entry: {
