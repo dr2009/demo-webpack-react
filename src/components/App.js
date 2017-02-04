@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
+import {bindActionCreators} from 'redux';
 import styles from './App.css';
-import * as Actions from '../actions'
+import * as Actions from '../actions';
 import Counter from './Counter';
 
 const App = ({counter, actions}) => (
