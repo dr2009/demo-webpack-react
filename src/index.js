@@ -12,7 +12,7 @@ import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
 
 // redux
-import reducer from './reducers'
+import reducer from './reducers';
 const store = createStore(reducer);
 
 const render = (Component) => {
@@ -31,6 +31,6 @@ render(App);
 // Hot Module Replacement API
 if (module.hot) {
     module.hot.accept('./components/App', () => {
-        render(App)
+        render(App);
     });
 }

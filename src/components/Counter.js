@@ -42,8 +42,8 @@ class Counter extends Component {
                     Increment async
                 </button>
             </p>
-        )
+        );
     }
 }
 
-export default Counter
+export default Counter;
