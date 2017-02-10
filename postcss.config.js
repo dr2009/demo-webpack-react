@@ -3,8 +3,8 @@
  */
 module.exports = {
     plugins: [
-        require('postcss-smart-import')({ /* ...options */ }),
-        require('precss')({ /* ...options */ }),
-        require('autoprefixer')({ /* ...options */ })
+        require('autoprefixer')({
+            browsers: ["ie >= 9", "Chrome >= 37", "iOS >= 8"]
+        })
     ]
 };
