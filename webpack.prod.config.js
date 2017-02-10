@@ -10,7 +10,7 @@ const WebpackChunkHash = require("webpack-chunk-hash");
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-redux', 'react-router', 'react-router-redux', 'redux'],
+        vendor: ['react', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
         main: './src/index.js'
     },
     output: {
@@ -35,7 +35,8 @@ module.exports = {
                 test: /\.css/,
                 use: [
                     "style-loader",
-                    "css-loader?modules"
+                    "css-loader?modules",
+                    'postcss-loader',
                 ]
             }
         ]

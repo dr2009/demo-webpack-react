@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux'],
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
         main: [
             'react-hot-loader/patch',
             // activate HMR for React
@@ -70,8 +70,8 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader?modules',
-                    // 'postcss-loader',
-                ],
+                    'postcss-loader',
+                ]
             },
             {
                 test: /\.(jpg|png|gif)$/,
