@@ -96,7 +96,7 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './static/index.html'
         }),
     ],
 };
