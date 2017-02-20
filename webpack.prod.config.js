@@ -10,7 +10,7 @@ const WebpackChunkHash = require("webpack-chunk-hash");
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
+        vendor: ['babel-polyfill', 'react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
         main: ['./src/index.js']
     },
     output: {

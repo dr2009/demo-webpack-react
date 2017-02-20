@@ -1,7 +1,7 @@
 /**
  * Created by dr2009 on 2017/2/3.
  */
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class Counter extends Component {
     static propTypes = {
@@ -21,7 +21,7 @@ class Counter extends Component {
     };
 
     render() {
-        const { value, onIncrement, onDecrement } = this.props;
+        const {value, onIncrement, onDecrement} = this.props;
         return (
             <p>
                 Clicked: {value} times

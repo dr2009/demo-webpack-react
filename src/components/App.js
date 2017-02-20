@@ -5,6 +5,15 @@ import './App.css';
 import * as Actions from '../actions';
 import Counter from './Counter';
 
+
+const mapStateToProps = state => ({
+    counter: state.counter
+});
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(Actions, dispatch)
+});
+
 const App = ({counter, actions}) => (
     <div className="app">
         <h2>React Counter!</h2>
@@ -15,14 +24,6 @@ const App = ({counter, actions}) => (
         />
     </div>
 );
-
-const mapStateToProps = state => ({
-    counter: state.counter
-});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(Actions, dispatch)
-});
 
 // export default App;
 export default connect(mapStateToProps, mapDispatchToProps)(App);
