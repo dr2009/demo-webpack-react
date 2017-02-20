@@ -10,13 +10,13 @@ const WebpackChunkHash = require("webpack-chunk-hash");
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
-        main: './src/index.js'
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
+        main: ['./src/index.js']
     },
     output: {
         path: path.join(__dirname, "dist"),
-        filename: '[name].[chunkhash].js',
-        chunkFilename: "[id].[chunkhash].js"
+        filename: '[name].[chunkhash:8].js',
+        chunkFilename: '[id].[chunkhash:8].js'
         // process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'
     },
     module: {
@@ -35,7 +35,7 @@ module.exports = {
                 test: /\.css/,
                 use: [
                     "style-loader",
-                    "css-loader?modules",
+                    "css-loader",
                     'postcss-loader',
                 ]
             }
