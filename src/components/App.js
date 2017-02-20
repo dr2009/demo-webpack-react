@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import styles from './App.css';
+import './App.css';
 import * as Actions from '../actions';
 import Counter from './Counter';
 
 const App = ({counter, actions}) => (
-    <div className={styles.app}>
+    <div className="app">
         <h2>React Counter!</h2>
         <Counter
             value={counter}
