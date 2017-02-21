@@ -1,7 +1,7 @@
 {
   "plugins": [
+    "transform-decorators-legacy", //required, 必须在class-properties之前！
     "transform-class-properties",
-    "transform-decorators-legacy",
     "react-hot-loader/babel"
   ],
   "presets": [
