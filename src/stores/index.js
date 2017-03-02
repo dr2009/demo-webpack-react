@@ -18,12 +18,12 @@ class Store {
         return this.count + this.restCount
     }
 
-    @action
+    @action.bound
     increment() {
         this.count++;
     }
 
-    @action
+    @action.bound
     decrement() {
         this.count--;
     }

@@ -8,7 +8,7 @@ import {Provider, inject, observer} from 'mobx-react';
 @inject("store") @observer
 class Inner extends React.Component {
     render() {
-        const {count,restCount,totalCount} = this.props.store;
+        const {count, restCount, totalCount} = this.props.store;
         return (
             <div>
                 {count}

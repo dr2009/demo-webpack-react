@@ -4,27 +4,29 @@ import {observer} from 'mobx-react';
 @observer
 class Counter extends Component {
     incrementIfOdd = () => {
-        if (this.props.value % 2 !== 0) {
-            this.props.store.increment();
+        const {count, increment} = this.props.store;
+        if (count % 2 !== 0) {
+            increment();
         }
     };
     incrementAsync = () => {
+        const {increment} = this.props.store;
         setTimeout(() => {
-            this.props.store.increment();
+            increment();
         }, 1000);
     };
 
     render() {
-        const {count} = this.props.store;
+        const {count, increment, decrement} = this.props.store;
         return (
             <p>
                 Clicked: {count} times
                 {' '}
-                <button onClick={() => this.props.store.increment()}>
+                <button onClick={increment}>
                     +
                 </button>
                 {' '}
-                <button onClick={() => this.props.store.decrement()}>
+                <button onClick={decrement}>
                     -
                 </button>
                 {' '}
