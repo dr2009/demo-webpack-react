@@ -13,8 +13,9 @@ class Store {
     get restCount() {
         return 100 - this.count
     }
+
     @computed
-    get totalCount(){
+    get totalCount() {
         return this.count + this.restCount
     }
 
