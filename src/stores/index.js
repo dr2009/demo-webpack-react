@@ -7,7 +7,16 @@ useStrict(true);
 
 class Store {
     @observable
-    count = 110;
+    count = 0;
+
+    @computed
+    get restCount() {
+        return 100 - this.count
+    }
+    @computed
+    get totalCount(){
+        return this.count + this.restCount
+    }
 
     @action
     increment() {
