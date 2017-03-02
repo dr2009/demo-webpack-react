@@ -15,10 +15,10 @@ class Counter extends Component {
     };
 
     render() {
-        const {counter} = this.props.store;
+        const {count} = this.props.store;
         return (
             <p>
-                Clicked: {counter.count} times
+                Clicked: {count} times
                 {' '}
                 <button onClick={() => this.props.store.increment()}>
                     +

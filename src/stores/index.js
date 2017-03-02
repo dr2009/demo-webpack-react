@@ -6,16 +6,17 @@ import {observable, action, computed, useStrict} from 'mobx';
 useStrict(true);
 
 class Store {
-    @observable counter = {
-        count: 110
-    };
+    @observable
+    count = 110;
 
-    @action increment() {
-        this.counter.count++;
+    @action
+    increment() {
+        this.count++;
     }
 
-    @action decrement() {
-        this.counter.count--;
+    @action
+    decrement() {
+        this.count--;
     }
 
 }
