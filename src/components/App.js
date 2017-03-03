@@ -1,36 +1,12 @@
 import React from 'react';
+import {Provider} from 'mobx-react';
+
 import './App.css';
+// store
 import store from '../stores';
+//
 import Counter from './Counter';
-
-import {Provider, inject, observer} from 'mobx-react';
-
-@inject("store") @observer
-class Inner extends React.Component {
-    render() {
-        const {count, restCount, totalCount} = this.props.store;
-        return (
-            <div>
-                {count}
-                +
-                {restCount}
-                =
-                {totalCount}
-                <br/>
-            </div>
-        );
-    }
-}
-
-class Middle extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.children}
-            </div>
-        );
-    }
-}
+import {Middle, Inner} from './Inner';
 
 const App = () => (
     <div className="app">
