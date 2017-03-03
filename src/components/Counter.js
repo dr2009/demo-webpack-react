@@ -2,35 +2,48 @@
  * Created by dr2009 on 2017/2/3.
  */
 import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as Actions from '../actions';
 
+const mapStateToProps = state => ({
+    counter: state.counter
+});
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(Actions, dispatch)
+});
+
+
+@connect(mapStateToProps, mapDispatchToProps)
 class Counter extends Component {
-    static propTypes = {
-        value: PropTypes.number.isRequired,
-        onIncrement: PropTypes.func.isRequired,
-        onDecrement: PropTypes.func.isRequired
-    };
+    // static propTypes = {
+    //     value: PropTypes.number.isRequired,
+    //     onIncrement: PropTypes.func.isRequired,
+    //     onDecrement: PropTypes.func.isRequired
+    // };
 
     incrementIfOdd = () => {
-        if (this.props.value % 2 !== 0) {
-            this.props.onIncrement();
+        if (this.props.counter % 2 !== 0) {
+            this.props.actions.increment();
         }
     };
 
     incrementAsync = () => {
-        setTimeout(this.props.onIncrement, 1000);
+        setTimeout(this.props.actions.increment, 1000);
     };
 
     render() {
-        const {value, onIncrement, onDecrement} = this.props;
+        const {increment, decrement} = this.props.actions;
         return (
             <p>
-                Clicked: {value} times
+                Clicked: {this.props.counter} times
                 {' '}
-                <button onClick={onIncrement}>
+                <button onClick={increment}>
                     +
                 </button>
                 {' '}
-                <button onClick={onDecrement}>
+                <button onClick={decrement}>
                     -
                 </button>
                 {' '}
