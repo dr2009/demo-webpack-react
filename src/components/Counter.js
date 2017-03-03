@@ -17,11 +17,6 @@ const mapDispatchToProps = dispatch => ({
 
 @connect(mapStateToProps, mapDispatchToProps)
 class Counter extends Component {
-    // static propTypes = {
-    //     value: PropTypes.number.isRequired,
-    //     onIncrement: PropTypes.func.isRequired,
-    //     onDecrement: PropTypes.func.isRequired
-    // };
 
     incrementIfOdd = () => {
         if (this.props.counter % 2 !== 0) {
