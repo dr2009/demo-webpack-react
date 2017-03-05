@@ -1,11 +1,11 @@
 /**
  * Created by dr2009 on 2017/2/3.
  */
-import { combineReducers } from 'redux';
-import counter from './counter';
+import { combineReducers } from 'redux'
+import counter from './counter'
 
 const rootReducer = combineReducers({
-    counter
-});
+  counter
+})
 
-export default rootReducer;
+export default rootReducer
