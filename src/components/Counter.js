@@ -17,19 +17,18 @@ const mapDispatchToProps = dispatch => ({
 
 @connect(mapStateToProps, mapDispatchToProps)
 class Counter extends Component {
-
   incrementIfOdd = () => {
     if (this.props.counter % 2 !== 0) {
-      this.props.actions.increment();
+      this.props.actions.increment()
     }
   }
 
   incrementAsync = () => {
-    setTimeout(this.props.actions.increment, 1000);
+    setTimeout(this.props.actions.increment, 1000)
   }
 
   render() {
-    const { increment, decrement } = this.props.actions;
+    const { increment, decrement } = this.props.actions
     return (
       <p>
         Clicked: {this.props.counter} times
@@ -42,7 +41,7 @@ class Counter extends Component {
         {' '}
         <button onClick={this.incrementAsync}>Increment async</button>
       </p>
-    );
+    )
   }
 }
 

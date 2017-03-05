@@ -11,18 +11,18 @@ const mapStateToProps = state => ({
 
 @connect(mapStateToProps)
 class Inner extends Component {
-  render() {
+  render () {
     const { counter, restCounter } = this.props
     return (
       <div>
-        {counter}+ {restCounter}= {counter + restCounter}
+        {counter} + {restCounter} = {counter + restCounter}
       </div>
     )
   }
 }
 
 class Middle extends Component {
-  render() {
+  render () {
     return (
       <div>
         {this.props.children}
