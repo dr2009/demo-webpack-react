@@ -1,24 +1,28 @@
 {
   "plugins": [
     "transform-decorators-legacy", //required, 必须在class-properties之前！
-    "transform-class-properties",
-    "react-hot-loader/babel"
+    "transform-class-properties"
   ],
   "presets": [
     [
-      "latest",
+      "env",
       {
-        "es2015": {
-          "modules": false
-        }
+        "targets": {
+          "chrome": 37, //last 2 versions
+          "ie": 9,
+          "iOS": 8
+        },
+        "modules": false,
+        "useBuiltIns": true,
+        "debug": true
       }
     ],
-    "react",
-    "stage-0"
+    "react"
   ],
   "env": {
     "development": {
-      "presets": [
+      "plugins": [
+        "react-hot-loader/babel"
       ]
     }
   }
