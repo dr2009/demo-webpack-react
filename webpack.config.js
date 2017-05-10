@@ -52,15 +52,15 @@ module.exports = {
       {
         test: /\.jsx?$/,
         use: [
-          'babel-loader',
+          'babel-loader?cacheDirectory',
         ],
-        exclude: /node_modules/
+        include: resolve(__dirname, 'src')
       },
       {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
+          'css-loader?minimize',
           'postcss-loader',
         ]
       },
