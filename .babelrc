@@ -1,22 +1,19 @@
 {
   "plugins": [
+    "syntax-dynamic-import",
     "transform-decorators-legacy", //required, 必须在class-properties之前！
     "transform-class-properties"
   ],
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "chrome": 37, //last 2 versions
-          "ie": 9,
-          "iOS": 8
-        },
-        "modules": false,
-        "useBuiltIns": true,
-        "debug": true
-      }
-    ],
+    ["env", {
+      "targets": {
+        "chrome": 37, //last 2 versions
+        "ie": 9,
+        "iOS": 8
+      },
+      "modules": false,
+      "loose": true
+    }],
     "react"
   ],
   "env": {

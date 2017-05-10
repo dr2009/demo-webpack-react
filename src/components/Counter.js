@@ -1,7 +1,7 @@
 /**
  * Created by dr2009 on 2017/2/3.
  */
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as Actions from '../actions'
