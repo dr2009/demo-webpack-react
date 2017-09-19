@@ -1,7 +1,7 @@
 {
   "name": "demo-react",
   "version": "1.0.1",
-  "description": "starter",
+  "description": "react starter",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -10,8 +10,8 @@
   "author": "dr2009",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.3",
