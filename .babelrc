@@ -9,8 +9,7 @@
       {
         "targets": {
           "chrome": 37, //last 2 versions
-          "ie": 9,
-          "iOS": 8
+          "iOS": 10
         },
         "modules": false,
         "useBuiltIns": true,

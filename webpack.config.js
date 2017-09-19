@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux', 'redux-actions'],
+    vendor: ['react', 'react-dom'],
     main: [
       'react-hot-loader/patch',
       // activate HMR for React
@@ -17,10 +17,9 @@ module.exports = {
       // bundle the client for hot reloading
       // only- means to only hot reload for successful updates
 
-
-      './src/index.js'
+      './src/index.js',
       // the entry point of our app
-    ]
+    ],
   },
   output: {
     filename: '[name].js',
@@ -54,7 +53,7 @@ module.exports = {
     contentBase: resolve(__dirname, './static'),
     // match the output path
 
-    publicPath: '/'
+    publicPath: '/',
     // match the output `publicPath`
   },
 
@@ -62,26 +61,29 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: [
-          'babel-loader',
-        ],
-        exclude: /node_modules/
+        use: ['babel-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(jpg|png|gif)$/,
-        loader: 'file-loader'
-      }, {
+        loader: 'file-loader',
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000'
-      }
+        loader: 'url-loader?limit=100000',
+      },
     ],
   },
 
@@ -93,15 +95,15 @@ module.exports = {
     // prints more readable module names in the browser console on HMR updates
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: ["vendor", "manifest"], // vendor libs + extracted manifest
+      name: ['vendor', 'manifest'], // vendor libs + extracted manifest
       minChunks: Infinity,
     }),
 
     new HtmlWebpackPlugin({
-      template: './static/index.html'
+      template: './static/index.html',
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
   ],
 };
