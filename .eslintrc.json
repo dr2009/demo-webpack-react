@@ -1,0 +1,14 @@
+{
+  "extends": ["prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module", // es6 import/export
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

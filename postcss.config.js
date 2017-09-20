@@ -4,7 +4,7 @@
 module.exports = {
   plugins: [
     require('autoprefixer')({
-      browsers: ['ie >= 9', 'Chrome >= 37', 'iOS >= 8']
-    })
-  ]
-}
+      browsers: ['ie >= 9', 'Chrome >= 37', 'iOS >= 8'],
+    }),
+  ],
+};

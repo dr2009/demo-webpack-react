@@ -26,6 +26,6 @@
 - babel-polyfill
 
 ### 代码规范
-- eslint(standard style)
+- eslint(prettier)
 - stylelint
 - editorConfig

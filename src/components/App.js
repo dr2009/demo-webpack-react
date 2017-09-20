@@ -1,4 +1,6 @@
 import React from 'react';
+import DemoA from './DemoA.jsx';
+
 import './App.css';
 import './App.scss';
 import './App.less';
@@ -6,6 +8,7 @@ import './App.less';
 const App = () => (
   <div className="app">
     <h2>Hello, React!</h2>
+    <DemoA />
   </div>
 );
 
