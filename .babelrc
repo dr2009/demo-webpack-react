@@ -1,14 +1,11 @@
 {
-  "plugins": [
-    "transform-decorators-legacy", //required, 必须在class-properties之前！
-    "transform-class-properties"
-  ],
+  "plugins": ["transform-decorators-legacy", "transform-class-properties"],
   "presets": [
     [
       "env",
       {
         "targets": {
-          "chrome": 37, //last 2 versions
+          "chrome": 37, // last 2 versions
           "iOS": 10
         },
         "modules": false,
