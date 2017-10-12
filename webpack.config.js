@@ -29,12 +29,12 @@ const common = {
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
-        test: /\.(jpg|png|gif)$/,
-        loader: 'file-loader',
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{ loader: 'url-loader', options: { limit: 4096 } }],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000',
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader'],
       },
     ],
   },
