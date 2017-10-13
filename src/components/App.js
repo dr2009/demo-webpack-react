@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoA from './DemoA.jsx';
+import DemoA from './DemoA';
 
 import './App.css';
 import './App.scss';
