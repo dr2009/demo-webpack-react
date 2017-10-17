@@ -2,16 +2,6 @@
   "parser": "babel-eslint",
   "extends": ["prettier", "prettier/react"],
   "plugins": ["prettier", "react"],
-  "parserOptions": {
-    "ecmaVersion": 2017,
-    "sourceType": "module", // es6 import/export
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "env": {
-    "browser": true
-  },
   "rules": {
     "prettier/prettier": "error"
   }
