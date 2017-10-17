@@ -1,6 +1,6 @@
 {
   "extends": ["prettier", "prettier/react"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react"],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module", // es6 import/export
