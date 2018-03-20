@@ -1,13 +1,13 @@
 {
-  "plugins": ["transform-decorators-legacy", "transform-class-properties"],
   "presets": [
     [
       "env",
       {
-        "targets": {
-          "chrome": 37, // last 2 versions
-          "iOS": 10
-        },
+        // "targets": {
+        //   "chrome": 37, // last 2 versions
+        //   "iOS": 10
+        // },
+        "loose": true,
         "modules": false,
         "useBuiltIns": true,
         "debug": true
@@ -20,4 +20,5 @@
       "plugins": ["react-hot-loader/babel"]
     }
   }
+  // "plugins": ["transform-decorators-legacy", "transform-class-properties"]
 }
